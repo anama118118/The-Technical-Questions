@@ -9,7 +9,7 @@
  */
 
 //**All questions are answered in Swift 3.0 because my computer doesn't have enough memory to upgrade to Mac OS High Sierra. As a result, the newest XCode wasn't installed to support Swift 4.0
-func q2decodeString2(_ s:String) -> String {
+func decodeString(_ s:String) -> String {
     //Create a mutable copy of String "s" and name it stringToReturn, stringToReturn changes in the while loop
     var stringToReturn = s
     //Capture the repeating sequence
@@ -93,9 +93,9 @@ func q2helperFunction2(_ int: Int, _ string: String) -> String {
 //5.Return String
 
 
-let result3 = q2decodeString2("4[ab]")
+let result3 = decodeString("4[ab]")
 print("\(result3) should be equal to abababab")
 
-let result4 = q2decodeString2("2[b3[a]]")
+let result4 = decodeString("2[b3[a]]")
 print("\(result4) should be equal to baaabaaa")
 
