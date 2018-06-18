@@ -14,7 +14,7 @@
 //**All questions are answered in Swift 3.0 because my computer doesn't have enough memory to upgrade to Mac OS High Sierra. As a result, the newest XCode wasn't installed to support Swift 4.0
 
 //String "t" contains the ideal character order, while String "s" contains the characters to be ordered
-func q1sortByStrings(_ s:String, _ t: String) -> String{
+func sortByStrings(_ s:String, _ t: String) -> String{
     var stringToReturn = ""
     //Loop through t's character
     for chart in t.characters {
@@ -31,8 +31,8 @@ func q1sortByStrings(_ s:String, _ t: String) -> String{
 }
 
 
-let result1 = q1sortByStrings("good", "odg")
+let result1 = sortByStrings("good", "odg")
 print("\(result1) should be equal to oodg")
 
-let result2 = q1sortByStrings("weather", "therapyw")
+let result2 = sortByStrings("weather", "therapyw")
 print("\(result2) should be equal to theeraw")
