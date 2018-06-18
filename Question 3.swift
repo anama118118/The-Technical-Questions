@@ -14,7 +14,7 @@
 
 //**All questions are answered in Swift 3.0 because my computer doesn't have enough memory to upgrade to Mac OS High Sierra. As a result, the newest XCode wasn't installed to support Swift 4.0
 
-func q3changePossibilities2(amount:Int, denominations:[Int], currentIndex: Int = 0, count:Int = 0, isForOriginalAmount:Bool = true) -> Int {
+func changePossibilities(amount:Int, denominations:[Int], currentIndex: Int = 0, count:Int = 0, isForOriginalAmount:Bool = true) -> Int {
     //This is the base case of a recursive function.
     //If the currentIndex is greater than the number of denominations.count - 1, return 0
     if currentIndex > denominations.count - 1 {
@@ -44,7 +44,7 @@ func q3changePossibilities2(amount:Int, denominations:[Int], currentIndex: Int =
             if amountDiff <= currentDenominationValue && currentDenominationValue != 1 {
                 
                 //Get additional count recursively
-                let additionCount = q3changePossibilities2(amount: amountDiff, denominations: denominations, isForOriginalAmount: false)
+                let additionCount = changePossibilities(amount: amountDiff, denominations: denominations, isForOriginalAmount: false)
                 
                 //Add the additional count to the local count
                 localCount = localCount + additionCount
@@ -67,7 +67,7 @@ func q3changePossibilities2(amount:Int, denominations:[Int], currentIndex: Int =
             if amountDiff <= currentDenominationValue && currentDenominationValue != 1 {
                 
                 //Get additional count recursively
-                let additionCount = q3changePossibilities2(amount: amountDiff, denominations: denominations, currentIndex: 0, count: 0, isForOriginalAmount: false)
+                let additionCount = changePossibilities(amount: amountDiff, denominations: denominations, currentIndex: 0, count: 0, isForOriginalAmount: false)
                 
                 //Add the additional count to the local count
                 localCount = localCount + additionCount
@@ -75,10 +75,10 @@ func q3changePossibilities2(amount:Int, denominations:[Int], currentIndex: Int =
         }
     }
     //Get the sum of all ways available
-    return localCount + q3changePossibilities2(amount:amount, denominations:denominations, currentIndex: currentIndex + 1)
+    return localCount + changePossibilities(amount:amount, denominations:denominations, currentIndex: currentIndex + 1)
 }
 
 //For improving this, the code for the recursive call can be reduced
 
-let result5 = q3changePossibilities2(amount: 4, denominations: [1,2,3])
+let result5 = changePossibilities(amount: 4, denominations: [1,2,3])
 print("\(result5) should be equal to 4")
